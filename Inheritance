@@ -1,0 +1,149 @@
+
+#include <iostream>
+using namespace std;
+
+// 1. Single Inheritance
+class Animal {
+public:
+    void eat() {
+        cout << "Animal is eating." << endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void bark() {
+        cout << "Dog is barking." << endl;
+    }
+};
+
+// 2. Multiple Inheritance
+class Father {
+public:
+    void fatherQuality() {
+        cout << "Father is hardworking." << endl;
+    }
+};
+
+class Mother {
+public:
+    void motherQuality() {
+        cout << "Mother is caring." << endl;
+    }
+};
+
+class Child : public Father, public Mother {
+public:
+    void childQuality() {
+        cout << "Child is learning." << endl;
+    }
+};
+
+// 3. Multilevel Inheritance
+class Grandparent {
+public:
+    void showGrandparent() {
+        cout << "This is the grandparent class." << endl;
+    }
+};
+
+class Parent : public Grandparent {
+public:
+    void showParent() {
+        cout << "This is the parent class." << endl;
+    }
+};
+
+class Son : public Parent {
+public:
+    void showSon() {
+        cout << "This is the son class." << endl;
+    }
+};
+
+// 4. Hierarchical Inheritance
+class Shape {
+public:
+    void showShape() {
+        cout << "This is a shape." << endl;
+    }
+};
+
+class Circle : public Shape {
+public:
+    void showCircle() {
+        cout << "This is a circle." << endl;
+    }
+};
+
+class Rectangle : public Shape {
+public:
+    void showRectangle() {
+        cout << "This is a rectangle." << endl;
+    }
+};
+
+// 5. Hybrid Inheritance
+class Person {
+public:
+    void showPerson() {
+        cout << "This is a person." << endl;
+    }
+};
+
+class Student : public Person {
+public:
+    void showStudent() {
+        cout << "This is a student." << endl;
+    }
+};
+
+class Sports {
+public:
+    void showSports() {
+        cout << "Student participates in sports." << endl;
+    }
+};
+
+class Result : public Student, public Sports {
+public:
+    void showResult() {
+        cout << "Result is declared." << endl;
+    }
+};
+
+int main() {
+    cout << "1. SINGLE INHERITANCE" << endl;
+    Dog d;
+    d.eat();
+    d.bark();
+
+    cout << "\n2. MULTIPLE INHERITANCE" << endl;
+    Child c;
+    c.fatherQuality();
+    c.motherQuality();
+    c.childQuality();
+
+    cout << "\n3. MULTILEVEL INHERITANCE" << endl;
+    Son s;
+    s.showGrandparent();
+    s.showParent();
+    s.showSon();
+
+    cout << "\n4. HIERARCHICAL INHERITANCE" << endl;
+    Circle ci;
+    Rectangle r;
+    ci.showShape();
+    ci.showCircle();
+    r.showShape();
+    r.showRectangle();
+
+    cout << "\n5. HYBRID INHERITANCE" << endl;
+    Result res;
+    res.showPerson();
+    res.showStudent();
+    res.showSports();
+    res.showResult();
+
+    return 0;
+}
